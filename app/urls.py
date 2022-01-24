@@ -27,6 +27,7 @@ urlpatterns = [
     path('', Home.as_view()),
     path('accounts/', include('django.contrib.auth.urls')),
     path('index/', index),
+    path('product/', include("centre.urls")),
     path('favorited/', include("favorited.urls")),
     path('home/', include("user.urls")),
     url(r'^swagger(?P<format>\.json|\.yaml)$',
