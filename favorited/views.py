@@ -11,7 +11,6 @@ from rest_framework.response import Response
 
 from favorited.models import Favorite
 from favorited.serializers import FavoriteDetailSerializer
-from user.models import MyUser
 
 
 class FavoritesViewSet(viewsets.ModelViewSet):
