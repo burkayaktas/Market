@@ -16,6 +16,6 @@ from favorited.serializers import FavoriteDetailSerializer
 class FavoritesViewSet(viewsets.ModelViewSet):
     queryset = Favorite.objects.all()
     serializer_class = FavoriteDetailSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = []
 
     tags = ["favorited"]
