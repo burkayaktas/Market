@@ -32,6 +32,7 @@ LOGOUT_REDIRECT_URL = "login"
 # Application definition
 INSTALLED_APPS = [
     'jazzmin',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -58,7 +60,11 @@ MIDDLEWARE = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'app.urls'
-
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3030',
+    'https://burkaysalescentre.herokuapp.com',
+    'http://burkaysalescentre.herokuapp.com'
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
